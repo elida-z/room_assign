@@ -1,0 +1,128 @@
+/* Base Styles for Body and Layout */
+body {
+    font-family: 'Fredoka One', sans-serif; /* Fun, readable font */
+    background-image: url('GeminiBackground.png'); /* Adding background image */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure it covers at least the full height of the viewport */
+}
+
+/* Header Styles */
+h1 {
+    font-size: 2.5em;
+    color: #5c67f2;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Form Styles */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    font-size: 1.2em;
+    color: #333;
+}
+
+input[type="file"] {
+    font-size: 1em;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Style for the Generate Room Assignments button */
+button[type="submit"] {
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #5c67f2; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"] {
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #5c67f2;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover, button[type="submit"]:focus {
+    background-color: #434db4;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* NEW: Separate Style for the Choose File button  */
+.upload-button { 
+    font-size: 1.0em;
+    color: #fff;
+    background-color: #e9c308;  /* Example: a reddish color  */
+    border: none;
+    padding: 1px 3px;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.upload-button:hover,
+.upload-button:focus { 
+    background-color: #facd3a;  /* Example: a darker red on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); 
+}
+/* Output Styles */
+h2 {
+    font-size: 2em;
+    color: #5c67f2;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+input[type="file"] { 
+    font-family: 'Fredoka One', sans-serif; /* Use your existing font */
+    font-size: 1em;
+    padding: 5px 10px;
+    border: 1px solid #cccccc;
+ }
+
+#output {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 800px;
+    overflow-x: auto;
+}
+
+pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

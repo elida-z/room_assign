@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+  <meta charset="UTF-8">
+  <title>Room Assignment Tool</title>
+  <script>
+    function triggerFileInput() {
+      document.getElementById('appointmentsFile').click();
+    }
+  </script> 
+</head>
+<body>
+	<style>
+		body {
+		  font-family: sans-serif;
+		}
+		.output {
+		  white-space: pre-wrap; 
+		  font-family: monospace; 
+		}
+	  </style>
+  <h1>Room Assignment Tool</h1>
+  <form method="POST" enctype="multipart/form-data"> 
+    <label for="appointmentsFile">Upload Appointments File:</label>
+    <input type="file" id="appointmentsFile" name="appointmentsFile" accept=".txt" style="display: none;"> 
+    <button type="button" class="upload-button" onclick="triggerFileInput()">Choose File</button>
+    <br><br>
+
+    <h3>Edit Room Assignments (Optional)</h3>
+    {% for practitioner, rooms in rooms.items() %}
+        <label for="{{ practitioner }}_rooms">{{ practitioner.title() }}:</label>
+        <input type="text" id="{{ practitioner }}_rooms" name="{{ practitioner }}_rooms" value="{{ rooms|join(',') }}">
+        <br>
+    {% endfor %}
+    <br>
+
+    <button type="submit">Generate Room Assignments</button>
+  </form>
+
+  {% if room_output %}
+    <h2>Room Assignments</h2>
+    <div class="output">{{ room_output }}</div>  
+  {% endif %}
+
+  {% if practitioner_output %}
+    <h2>Practitioner Assignments</h2>
+    <div class="output">{{ practitioner_output }}</div> 
+  {% endif %}
+
+  {% if room_output or practitioner_output %}
+  <!-- Feedback Form -->
+  <footer>
+    <h3>Give Us Your Feedback</h3>
+    <form method="POST" action="{{ url_for('feedback') }}">
+        <textarea name="feedback" rows="4" cols="50" placeholder="Your feedback..."></textarea><br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+  </footer>
+  {% endif %}
+</body>
+</html>
